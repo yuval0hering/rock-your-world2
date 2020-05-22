@@ -1,8 +1,7 @@
-
 class Song:
-    def __init__(self, song, singer):
+    def __init__(self, song, artist):
         self.song = song
-        self.singer = singer
+        self.artist = artist
 
     def to_json(self):
-        return {"song": self.song, "singer": self.singer}
+        return {"song": self.song, "artist": self.artist}

@@ -1,7 +1,6 @@
-import geopandas
 import geopy
-import json
-from Song import Song
+from song import Song
+
 
 class Place:
 
@@ -16,11 +15,12 @@ class Place:
         self.latitude = location.latitude
         self.longitude = location.longitude
 
+
     def place_dict(self):
         return self.__dict__
 
-    def add_song(self, song_name, singer):
-        self.songs.append(Song(song_name, singer))
+    def add_song(self, song_name, artist):
+        self.songs.append(Song(song_name, artist))
 
     def to_json(self):
         songs_json = []
