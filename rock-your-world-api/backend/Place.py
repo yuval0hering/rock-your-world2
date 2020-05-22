@@ -3,7 +3,6 @@ import geopy
 import json
 from Song import Song
 
-
 class Place:
 
     def __init__(self, name):
