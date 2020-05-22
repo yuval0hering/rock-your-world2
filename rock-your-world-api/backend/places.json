@@ -1,0 +1,68 @@
+[
+  {
+    "name": "Virginia",
+    "songs": [
+      {
+        "song": "Vienna",
+        "singer": "Billy Joel"
+      }
+    ],
+    "latitude": 37.1232245,
+    "longitude": -78.4927721
+  },
+  {
+    "name": "Alabama",
+    "songs": [
+      {
+        "song": "Vienna",
+        "singer": "Billy Joel"
+      }
+    ],
+    "latitude": 33.2588817,
+    "longitude": -86.8295337
+  },
+  {
+    "name": "Vienna",
+    "songs": [
+      {
+        "song": "Vienna",
+        "singer": "Billy Joel"
+      }
+    ],
+    "latitude": 48.2083537,
+    "longitude": 16.3725042
+  },
+  {
+    "name": "Washington",
+    "songs": [
+      {
+        "song": "Vienna",
+        "singer": "Billy Joel"
+      }
+    ],
+    "latitude": 38.8949855,
+    "longitude": -77.0365708
+  },
+  {
+    "name": "Jerusalem",
+    "songs": [
+      {
+        "song": "Vienna",
+        "singer": "Billy Joel"
+      }
+    ],
+    "latitude": 31.778345,
+    "longitude": 35.2250786
+  },
+  {
+    "name": "London",
+    "songs": [
+      {
+        "song": "Vienna",
+        "singer": "Billy Joel"
+      }
+    ],
+    "latitude": 51.5073219,
+    "longitude": -0.1276474
+  }
+]
