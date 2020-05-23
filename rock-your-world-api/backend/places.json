@@ -1,8 +1,114 @@
 [
   {
+    "__type__": "Place",
+    "name": "Khe",
+    "songs": [
+      {
+        "__type__": "Song",
+        "song": "Born in the U.S.A.",
+        "artist": "Bruce Springsteen"
+      }
+    ],
+    "latitude": 15.7714038,
+    "longitude": 108.1155005
+  },
+  {
+    "__type__": "Place",
+    "name": "U.S.A",
+    "songs": [
+      {
+        "__type__": "Song",
+        "song": "Born in the U.S.A.",
+        "artist": "Bruce Springsteen"
+      }
+    ],
+    "latitude": 31.1932768,
+    "longitude": 30.0540191
+  },
+  {
+    "__type__": "Place",
+    "name": "now",
+    "songs": [
+      {
+        "__type__": "Song",
+        "song": "Born in the U.S.A.",
+        "artist": "Bruce Springsteen"
+      }
+    ],
+    "latitude": 36.1586585,
+    "longitude": 137.891261
+  },
+  {
+    "__type__": "Place",
+    "name": "Sanh",
+    "songs": [
+      {
+        "__type__": "Song",
+        "song": "Born in the U.S.A.",
+        "artist": "Bruce Springsteen"
+      }
+    ],
+    "latitude": 44.980471449999996,
+    "longitude": -93.2408248591022
+  },
+  {
+    "__type__": "Place",
+    "name": "Saigon",
+    "songs": [
+      {
+        "__type__": "Song",
+        "song": "Born in the U.S.A.",
+        "artist": "Bruce Springsteen"
+      }
+    ],
+    "latitude": 10.7758439,
+    "longitude": 106.7017555
+  },
+  {
+    "__type__": "Place",
+    "name": "Born",
+    "songs": [
+      {
+        "__type__": "Song",
+        "song": "Born in the U.S.A.",
+        "artist": "Bruce Springsteen"
+      }
+    ],
+    "latitude": 43.8841735,
+    "longitude": 1.544985
+  },
+  {
+    "__type__": "Place",
+    "name": "U.S.A.",
+    "songs": [
+      {
+        "__type__": "Song",
+        "song": "Born in the U.S.A.",
+        "artist": "Bruce Springsteen"
+      }
+    ],
+    "latitude": 31.1932768,
+    "longitude": 30.0540191
+  },
+  {
+    "__type__": "Place",
+    "name": "Fighting",
+    "songs": [
+      {
+        "__type__": "Song",
+        "song": "Born in the U.S.A.",
+        "artist": "Bruce Springsteen"
+      }
+    ],
+    "latitude": 6.3092227,
+    "longitude": 99.8627659
+  },
+  {
+    "__type__": "Place",
     "name": "Vienna",
     "songs": [
       {
+        "__type__": "Song",
         "song": "Vienna",
         "artist": "Billy Joel"
       }

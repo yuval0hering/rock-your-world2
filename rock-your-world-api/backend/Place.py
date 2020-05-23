@@ -4,17 +4,19 @@ from song import Song
 
 class Place:
 
-    def __init__(self, name):
+    def __init__(self, name, songs=[], latitude=0, longitude=0):
+        self.__type__ = 'Place'
         self.name = name
-        self.songs = []
-        self.__find_coordinates()
+        self.songs = songs
+        self.latitude = latitude
+        self.longitude = longitude
 
-    def __find_coordinates(self):
+    def find_coordinates(self):
         locator = geopy.Nominatim(user_agent="myGeocoder")
         location = locator.geocode(self.name)
-        self.latitude = location.latitude
-        self.longitude = location.longitude
-
+        if location is not None:
+            self.latitude = location.latitude
+            self.longitude = location.longitude
 
     def place_dict(self):
         return self.__dict__
@@ -27,4 +29,11 @@ class Place:
         for song in self.songs:
             songs_json.append(song.to_json())
 
-        return {"name": self.name, "songs": songs_json, "latitude": self.latitude, "longitude": self.longitude}
+        return {"__type__": self.__type__, "name": self.name, "songs": songs_json, "latitude": self.latitude, "longitude": self.longitude}
+
+    @staticmethod
+    def as_place(dct):
+        if dct['__type__'] == 'Place':
+            songs = Song.as_song(dct['songs'])
+            return Place(dct['name'], songs, dct['latitude'], dct['longitude'])
+        return dct

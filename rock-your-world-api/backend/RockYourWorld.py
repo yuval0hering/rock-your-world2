@@ -4,21 +4,30 @@ import lyricsgenius
 from nltk.tag import StanfordNERTagger
 from nltk.tokenize import word_tokenize
 from place import Place
-from song import Song
 
 
 def main():
     path = os.path.join(os.path.abspath(os.path.dirname(__file__)), "songs.json")
+    places = []
     with open(path, "r") as songs_json:
         song_list = json.load(songs_json)
     for s in song_list:
         song = get_song_lyrics(s['name'], s['artist'])
-        song_title = song.title
-        song_artist = song.artist
-        lyrics = song.lyrics
-        places = find_places_in_lyrics(lyrics)
-        if places is not []:
-            create_places_json(places, song_title, song_artist)
+        i = 0
+        while i < 2:
+            i += 1
+            if song is None:
+                song = get_song_lyrics(s['name'], s['artist'])
+            else:
+                break
+        if song is not None:
+            song_title = song.title
+            song_artist = song.artist
+            lyrics = song.lyrics
+            extracted_places = find_places_in_lyrics(lyrics)
+            if extracted_places is not []:
+                places = create_places_list(places, extracted_places, song_title, song_artist)
+    places_to_json(places)
 
 
 def get_song_lyrics(song_name, artist):
@@ -41,8 +50,12 @@ def find_places_in_lyrics(lyrics):
     return list(set(ner_places))
 
 
-def create_places_json(extracted_places, song_title, song_artist):
-    places = []
+def create_places_list(places, extracted_places, song_title, song_artist):
+    #with open('places.json', 'r', encoding='utf-8') as places_file:
+        # json_places = json.load(places_file)
+        # for json_place in json_places:
+        #     place = Place.as_place(json_place)
+        #     places.append(place)
 
     for new_place_name in extracted_places:
         exists = False
@@ -52,10 +65,15 @@ def create_places_json(extracted_places, song_title, song_artist):
                 exists = True
                 break
         if not exists:
-            p = Place(new_place_name)
-            p.add_song(song_title, song_artist)
-            places.append(p)
+            p = Place(new_place_name, [])
+            p.find_coordinates()
+            if p.latitude != 0 or p.longitude != 0:
+                p.add_song(song_title, song_artist)
+                places.append(p)
+    return places
 
+
+def places_to_json(places):
     json_places = []
 
     for p in places:
