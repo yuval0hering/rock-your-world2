@@ -38,24 +38,19 @@ def get_song_lyrics(song_name, artist):
 
 def find_places_in_lyrics(lyrics):
     st = StanfordNERTagger(
-        '/Users/yuvalhering/Desktop/stanford-ner-2018-10-16/classifiers/english.all.3class.distsim.crf.ser.gz',
-        '/Users/yuvalhering/Desktop/stanford-ner-2018-10-16/stanford-ner.jar',
+        '../stanford-ner-2018-10-16/classifiers/english.all.3class.distsim.crf.ser.gz',
+        '../stanford-ner-2018-10-16/stanford-ner.jar',
         encoding='utf-8')
     tokenized_text = word_tokenize(lyrics)
     classified_text = st.tag(tokenized_text)
     ner_places = []
     for classification in classified_text:
         if classification[1] == 'LOCATION':
-            ner_places.append(classification[0])
+            ner_places.append(classification[0].translate({ord('.'): None}))
     return list(set(ner_places))
 
 
 def create_places_list(places, extracted_places, song_title, song_artist):
-    #with open('places.json', 'r', encoding='utf-8') as places_file:
-        # json_places = json.load(places_file)
-        # for json_place in json_places:
-        #     place = Place.as_place(json_place)
-        #     places.append(place)
 
     for new_place_name in extracted_places:
         exists = False

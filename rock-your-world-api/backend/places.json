@@ -14,19 +14,6 @@
   },
   {
     "__type__": "Place",
-    "name": "U.S.A",
-    "songs": [
-      {
-        "__type__": "Song",
-        "song": "Born in the U.S.A.",
-        "artist": "Bruce Springsteen"
-      }
-    ],
-    "latitude": 31.1932768,
-    "longitude": 30.0540191
-  },
-  {
-    "__type__": "Place",
     "name": "now",
     "songs": [
       {
@@ -53,7 +40,7 @@
   },
   {
     "__type__": "Place",
-    "name": "Saigon",
+    "name": "Fighting",
     "songs": [
       {
         "__type__": "Song",
@@ -61,8 +48,8 @@
         "artist": "Bruce Springsteen"
       }
     ],
-    "latitude": 10.7758439,
-    "longitude": 106.7017555
+    "latitude": 6.3092227,
+    "longitude": 99.8627659
   },
   {
     "__type__": "Place",
@@ -79,7 +66,7 @@
   },
   {
     "__type__": "Place",
-    "name": "U.S.A.",
+    "name": "USA",
     "songs": [
       {
         "__type__": "Song",
@@ -87,12 +74,12 @@
         "artist": "Bruce Springsteen"
       }
     ],
-    "latitude": 31.1932768,
-    "longitude": 30.0540191
+    "latitude": 39.7837304,
+    "longitude": -100.4458825
   },
   {
     "__type__": "Place",
-    "name": "Fighting",
+    "name": "Saigon",
     "songs": [
       {
         "__type__": "Song",
@@ -100,8 +87,8 @@
         "artist": "Bruce Springsteen"
       }
     ],
-    "latitude": 6.3092227,
-    "longitude": 99.8627659
+    "latitude": 10.7758439,
+    "longitude": 106.7017555
   },
   {
     "__type__": "Place",
@@ -115,5 +102,114 @@
     ],
     "latitude": 48.2083537,
     "longitude": 16.3725042
+  },
+  {
+    "__type__": "Place",
+    "name": "London",
+    "songs": [
+      {
+        "__type__": "Song",
+        "song": "Last Train to London",
+        "artist": "Electric Light Orchestra"
+      }
+    ],
+    "latitude": 51.5073219,
+    "longitude": -0.1276474
+  },
+  {
+    "__type__": "Place",
+    "name": "Alabama",
+    "songs": [
+      {
+        "__type__": "Song",
+        "song": "Sweet Home Alabama",
+        "artist": "Lynyrd Skynyrd"
+      },
+      {
+        "__type__": "Song",
+        "song": "Alabama Song (Whisky Bar)",
+        "artist": "The Doors"
+      }
+    ],
+    "latitude": 33.2588817,
+    "longitude": -86.8295337
+  },
+  {
+    "__type__": "Place",
+    "name": "Birmingham",
+    "songs": [
+      {
+        "__type__": "Song",
+        "song": "Sweet Home Alabama",
+        "artist": "Lynyrd Skynyrd"
+      }
+    ],
+    "latitude": 52.4796992,
+    "longitude": -1.9026911
+  },
+  {
+    "__type__": "Place",
+    "name": "Budapest",
+    "songs": [
+      {
+        "__type__": "Song",
+        "song": "Budapest",
+        "artist": "George Ezra"
+      }
+    ],
+    "latitude": 47.4983815,
+    "longitude": 19.0404707
+  },
+  {
+    "__type__": "Place",
+    "name": "California",
+    "songs": [
+      {
+        "__type__": "Song",
+        "song": "California Dreamin\u2019",
+        "artist": "The Mamas & The Papas"
+      }
+    ],
+    "latitude": 36.7014631,
+    "longitude": -118.7559974
+  },
+  {
+    "__type__": "Place",
+    "name": "East",
+    "songs": [
+      {
+        "__type__": "Song",
+        "song": "Havana",
+        "artist": "Camila Cabello"
+      }
+    ],
+    "latitude": 31.15172525,
+    "longitude": 112.87832224656043
+  },
+  {
+    "__type__": "Place",
+    "name": "Atlanta",
+    "songs": [
+      {
+        "__type__": "Song",
+        "song": "Havana",
+        "artist": "Camila Cabello"
+      }
+    ],
+    "latitude": 33.7490987,
+    "longitude": -84.3901849
+  },
+  {
+    "__type__": "Place",
+    "name": "Havana",
+    "songs": [
+      {
+        "__type__": "Song",
+        "song": "Havana",
+        "artist": "Camila Cabello"
+      }
+    ],
+    "latitude": 23.135305,
+    "longitude": -82.3589631
   }
 ]
