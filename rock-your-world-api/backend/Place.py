@@ -30,10 +30,3 @@ class Place:
             songs_json.append(song.to_json())
 
         return {"__type__": self.__type__, "name": self.name, "songs": songs_json, "latitude": self.latitude, "longitude": self.longitude}
-
-    @staticmethod
-    def as_place(dct):
-        if dct['__type__'] == 'Place':
-            songs = Song.as_song(dct['songs'])
-            return Place(dct['name'], songs, dct['latitude'], dct['longitude'])
-        return dct
