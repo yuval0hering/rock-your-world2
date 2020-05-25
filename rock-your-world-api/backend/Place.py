@@ -21,8 +21,8 @@ class Place:
     def place_dict(self):
         return self.__dict__
 
-    def add_song(self, song_name, artist):
-        self.songs.append(Song(song_name, artist))
+    def add_song(self, song_name, artist, lyrics, url):
+        self.songs.append(Song(song_name, artist, lyrics, url))
 
     def to_json(self):
         songs_json = []
