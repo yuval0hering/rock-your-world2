@@ -41,14 +41,26 @@ def find_places_in_lyrics(lyrics):
     tokenized_text = word_tokenize(lyrics)
     classified_text = st.tag(tokenized_text)
     ner_places = []
-    for classification in classified_text:
-        if classification[1] == 'LOCATION':
-            ner_places.append(classification[0].translate({ord('.'): None}))
-    return list(set(ner_places))
+    for i in range(0, len(classified_text) - 1):
+        if classified_text[i][1] == 'LOCATION':
+            if classified_text[i + 1][1] == 'LOCATION':
+                ner_places.append(classified_text[i][0].translate({ord('.'): None}) + " " +
+                                  classified_text[i + 1][0].translate({ord('.'): None}))
+                i += 1
+            else:
+                ner_places.append(classified_text[i][0].translate({ord('.'): None}))
+    copy_places = ner_places.copy()
+    for place in ner_places:
+        splitted = place.split()
+        for word in splitted:
+            first_ch = word[0]
+            if not first_ch.isupper():
+                copy_places.remove(place)
+                break
+    return list(set(copy_places))
 
 
 def create_places_list(places, extracted_places, song_title, song_artist, song_lyrics, song_url):
-
     for new_place_name in extracted_places:
         exists = False
         for place in places:
