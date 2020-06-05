@@ -4,28 +4,39 @@ import lyricsgenius
 from nltk.tag import StanfordNERTagger
 from nltk.tokenize import word_tokenize
 from place import Place
+from flask import Flask
+from flask import jsonify
+from flask_cors import CORS
 
+app = Flask(__name__)
+CORS(app)
 
-def main():
+@app.route('/get_places', methods=['GET'])
+def create_places_from_songs():
     path = os.path.join(os.path.abspath(os.path.dirname(__file__)), "songs.json")
     genius = lyricsgenius.Genius('ifAv5R1fL3F6sMRXubPSueXJ3AlOe_gUu7MftBKJYR5dK8xMvw2_JCmgMc4ltmmi')
     places = []
     with open(path, "r") as songs_json:
         song_list = json.load(songs_json)
     for s in song_list:
-        song = get_song_lyrics(genius, s['name'], s['artist'])
+        song = get_song_lyrics(genius, s["name"], s["artist"])
         i = 0
         while i < 2:
             i += 1
             if song is None:
-                song = get_song_lyrics(genius, s['name'], s['artist'])
+                song = get_song_lyrics(genius, s["name"], s["artist"])
             else:
                 break
         if song is not None:
             extracted_places = find_places_in_lyrics(song.lyrics)
             if extracted_places is not []:
                 places = create_places_list(places, extracted_places, song.title, song.artist, song.lyrics, song.url)
-    places_to_json(places)
+    # places_to_json(places)
+    json_places = []
+    for p in places:
+        place_dict = p.to_json()
+        json_places.append(place_dict)
+    return jsonify(json_places)
 
 
 def get_song_lyrics(genius, song_name, artist):
@@ -88,5 +99,6 @@ def places_to_json(places):
         json.dump(json_places, places_file, indent=2)
 
 
-if __name__ == '__main__':
-    main()
+# if __name__ == '__main__':
+#     main()
+app.run()
