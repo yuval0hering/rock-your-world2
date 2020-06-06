@@ -5,11 +5,12 @@ from nltk.tag import StanfordNERTagger
 from nltk.tokenize import word_tokenize
 from place import Place
 from flask import Flask
-from flask import jsonify
+from flask import jsonify, request
 from flask_cors import CORS
 
 app = Flask(__name__)
 CORS(app)
+
 
 @app.route('/get_places', methods=['GET'])
 def create_places_from_songs():
@@ -72,6 +73,7 @@ def find_places_in_lyrics(lyrics):
 
 
 def create_places_list(places, extracted_places, song_title, song_artist, song_lyrics, song_url):
+    extracted_places = filter_ignore_places(extracted_places)
     for new_place_name in extracted_places:
         exists = False
         for place in places:
@@ -99,6 +101,12 @@ def places_to_json(places):
         json.dump(json_places, places_file, indent=2)
 
 
-# if __name__ == '__main__':
-#     main()
+def filter_ignore_places(places):
+    ignore_places = ["Born", "Fighting", "Beach", "River", "America", "USA Born"]
+    filtered_places = []
+    for place in places:
+        if not ignore_places.__contains__(place):
+            filtered_places.append(place)
+    return filtered_places
+
 app.run()
