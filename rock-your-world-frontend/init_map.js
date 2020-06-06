@@ -1,13 +1,19 @@
-
-init();
-function init() {
-    var data=[{"bug":'bug'}];
+get_markers()
+function get_markers() {
+    console.log("test!!");
+    var data=[];
     const Http = new XMLHttpRequest();
-    const url = 'http://localhost:5000/get_places';
-    Http.open("GET", url,false);
+    var artist = document.forms["insertArtist"]["fname"].value;
+    console.log(document.forms["insertArtist"]["fname"].value);
+    //const url = 'http://localhost:5000/get_places';
+    var url = 'http://localhost:5000/artist/'+artist;
+    if (artist===""){
+        url = 'http://localhost:5000/artist/billy+joel'
+    }
+    Http.open("POST", url,false);
     Http.send();
     data= JSON.parse(Http.response);
-    var mymap = L.map('mapid').setView([51.505, -0.09], 13);
+    var mymap = L.map('mapid').setView([51.505, -0.09], 6);
     L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token=pk.eyJ1IjoieXV2YWxoZXIiLCJhIjoiY2s5bGU2eGdwMDNreTNrcnR3ZWt6MDFxMiJ9.2jCmAPMv8fglHt-5kf-sGg', {
         attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
         maxZoom: 18,

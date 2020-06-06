@@ -12,6 +12,23 @@ app = Flask(__name__)
 CORS(app)
 
 
+@app.route('/artist/<string:artist>', methods=['POST'])
+def get_artist_songs(artist):
+    genius = lyricsgenius.Genius('ifAv5R1fL3F6sMRXubPSueXJ3AlOe_gUu7MftBKJYR5dK8xMvw2_JCmgMc4ltmmi')
+    places = []
+    artist = genius.search_artist(artist, max_songs=20)
+    if artist is not None:
+        for song in artist.songs:
+            extracted_places = find_places_in_lyrics(song.lyrics)
+            if extracted_places is not []:
+                places = create_places_list(places, extracted_places, song.title, song.artist, song.lyrics, song.url)
+    json_places = []
+    for p in places:
+        place_dict = p.to_json()
+        json_places.append(place_dict)
+    return jsonify(json_places)
+
+
 @app.route('/get_places', methods=['GET'])
 def create_places_from_songs():
     path = os.path.join(os.path.abspath(os.path.dirname(__file__)), "songs.json")
@@ -102,7 +119,8 @@ def places_to_json(places):
 
 
 def filter_ignore_places(places):
-    ignore_places = ["Born", "Fighting", "Beach", "River", "America", "USA Born"]
+    ignore_places = ["Born", "Fighting", "Beach", "River", "America", "USA Born", "City", "Parkway", "Island", "Place", "Sound",
+                     "Children", "Then", "Like"]
     filtered_places = []
     for place in places:
         if not ignore_places.__contains__(place):
