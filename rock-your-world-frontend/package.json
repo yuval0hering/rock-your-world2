@@ -2,7 +2,7 @@
   "name": "rock-your-world",
   "version": "1.0.0",
   "description": "",
-  "main": "init_map.js",
+  "main": "create_map.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },

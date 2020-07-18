@@ -120,7 +120,7 @@ def places_to_json(places):
 
 def filter_ignore_places(places):
     ignore_places = ["Born", "Fighting", "Beach", "River", "America", "USA Born", "City", "Parkway", "Island", "Place", "Sound",
-                     "Children", "Then", "Like"]
+                     "Children", "Then", "Like", "World", "Pigs", "Sunset", "Red China"]
     filtered_places = []
     for place in places:
         if not ignore_places.__contains__(place):
