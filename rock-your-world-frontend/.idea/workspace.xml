@@ -2,15 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e2c89569-62c5-4561-b683-440ae0190414" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/guitar.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/icons.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/rock_your_world_icon.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../rock-your-world-api/backend/Place.py" beforeDir="false" afterPath="$PROJECT_DIR$/../rock-your-world-api/backend/Place.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../rock-your-world-api/backend/rock_your_world.py" beforeDir="false" afterPath="$PROJECT_DIR$/../rock-your-world-api/backend/rock_your_world.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/init_map.js" beforeDir="false" afterPath="$PROJECT_DIR$/create_map.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/create_map.js" beforeDir="false" afterPath="$PROJECT_DIR$/create_map.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/map.html" beforeDir="false" afterPath="$PROJECT_DIR$/map.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -95,7 +90,7 @@
       <workItem from="1590246727480" duration="1638000" />
       <workItem from="1591348413497" duration="28908000" />
       <workItem from="1591864840201" duration="51000" />
-      <workItem from="1594976197236" duration="11160000" />
+      <workItem from="1594976197236" duration="12049000" />
     </task>
     <servers />
   </component>
