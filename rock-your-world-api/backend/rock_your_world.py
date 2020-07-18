@@ -111,7 +111,8 @@ def places_to_json(places):
     json_places = []
 
     for p in places:
-        place_dict = p.to_json()
+        place_dict = p.to_json(),
+
         json_places.append(place_dict)
 
     with open('places.json', 'w', encoding='utf-8') as places_file:
@@ -119,12 +120,14 @@ def places_to_json(places):
 
 
 def filter_ignore_places(places):
-    ignore_places = ["Born", "Fighting", "Beach", "River", "America", "USA Born", "City", "Parkway", "Island", "Place", "Sound",
-                     "Children", "Then", "Like", "World", "Pigs", "Sunset", "Red China"]
+    ignore_places = ["Born", "Fighting", "Beach", "River", "America", "USA Born", "City", "Parkway", "Island", "Place",
+                     "Sound","Children", "Then", "Like", "World", "Pigs", "Sunset", "Red China", "Third World",
+                     "Whisky Bar", "Bar Smiles", "Road"]
     filtered_places = []
     for place in places:
         if not ignore_places.__contains__(place):
             filtered_places.append(place)
     return filtered_places
+
 
 app.run()

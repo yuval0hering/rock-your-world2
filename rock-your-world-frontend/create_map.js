@@ -17,7 +17,7 @@ function init_map() {
 
 function add_markers(artist) {
     const Http = new XMLHttpRequest();
-    var artist = document.forms["insertArtist"]["fname"].value;
+    //var artist = document.forms["insertArtist"]["fname"].value;
     var url = 'http://localhost:5000/artist/'+artist;
     if (artist===""){
         url = 'http://localhost:5000/artist/billy+joel'
