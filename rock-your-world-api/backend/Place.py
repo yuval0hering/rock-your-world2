@@ -12,8 +12,12 @@ class Place:
         self.longitude = longitude
 
     def find_coordinates(self):
-        locator = geopy.Nominatim(user_agent="myGeocoder")
-        location = locator.geocode(self.name)
+        try:
+            locator = geopy.Nominatim(user_agent="myGeocoder")
+            location = locator.geocode(self.name)
+        except TimeoutError:
+            location = None
+
         if location is not None:
             self.latitude = location.latitude
             self.longitude = location.longitude
@@ -29,4 +33,5 @@ class Place:
         for song in self.songs:
             songs_json.append(song.to_json())
 
-        return {"__type__": self.__type__, "name": self.name, "songs": songs_json, "latitude": self.latitude, "longitude": self.longitude}
+        return {"__type__": self.__type__, "name": self.name, "songs": songs_json, "latitude": self.latitude,
+                "longitude": self.longitude}

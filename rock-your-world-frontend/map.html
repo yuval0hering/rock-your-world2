@@ -2,7 +2,8 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Rock Your World</title>
+    <link rel="icon" href="guitar.png" type = "image/x-icon">
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css"
           integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
           crossorigin=""/>
@@ -11,49 +12,21 @@
             integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew=="
             crossorigin=""></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script type="module" src="init_map.js"></script>
+    <script src="icons.js"></script>
+    <script src="create_map.js"></script>
+    <script>
+        window.addEventListener("DOMContentLoaded", function() {
+            init_map();
+        }, false);
+    </script>
 </head>
 <body>
-    <form name="insertArtist" onsubmit="get_markers();" method="post">
-        Artist: <input type="text" name="fname">
-        <input type="submit" value="Submit">
+    <form name="insertArtist" method="post">
+        Artist: <input id ="artist-name" type="text" name="fname">
+        <input type="submit" value="Submit" onclick="add_markers(document.getElementById('artist-name').value);">
+        <input type="button" value="Download JSON" onclick="DownloadData()" />
+        <input type="button" value="Clear Map" onclick="ClearMap()" />
     </form>
-    <div id="mapid" class="map" style="width: 1000px; height: 950px; position: relative; outline: none;"></div>
-
-<script>
-    function get_markers1() {
-        var data=[];
-        const Http = new XMLHttpRequest();
-        var artist = document.forms["insertArtist"]["fname"].value;
-        //const url = 'http://localhost:5000/get_places';
-        var url = 'http://localhost:5000/artist/'+artist;
-        Http.open("POST", url,false);
-        Http.send();
-        data= JSON.parse(Http.response);
-        console.log(data);
-        var mymap = L.map('mapid').setView([51.505, -0.09], 6);
-        L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token=pk.eyJ1IjoieXV2YWxoZXIiLCJhIjoiY2s5bGU2eGdwMDNreTNrcnR3ZWt6MDFxMiJ9.2jCmAPMv8fglHt-5kf-sGg', {
-            attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
-            maxZoom: 18,
-            id: 'mapbox/streets-v11',
-            tileSize: 512,
-            zoomOffset: -1,
-            accessToken: 'your.mapbox.access.token'
-        }).addTo(mymap);
-
-        for (var i = 0; i < data.length; i++) {
-
-            var songs="";
-            for(var j=0 ; j<data[i].songs.length; j++){
-                songs+= "\n"+ data[i].songs[j].song+" - "+data[i].songs[j].artist+"\n";
-            }
-            var place = data[i].name+"\n";
-            var marker = L.marker([data[i].latitude,data[i].longitude])
-                .addTo(mymap)
-                .bindPopup(`<b>${place} - </b>${songs}`).openPopup();
-        }
-    }
-
-</script>
+    <div id="mapid" class="map" style="width: 1800px; height: 900px; position: relative; outline: none;"></div>
 </body>
 </html>
