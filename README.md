@@ -17,4 +17,5 @@ now the server should run on http://127.0.0.1:5000/
 9. open rock-your-world-frontend directory.
 10. open the map.html file
 
-That's it! now you can check about which places your favorite artists sing his songs! enjoy!
+That's it! now you can check about which locations your favorite artists sing his songs! enjoy!
+
