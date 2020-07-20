@@ -19,10 +19,8 @@ now the server should run on http://127.0.0.1:5000/
 
 That's it! now you can check about which locations your favorite artists sing his songs! enjoy!
 
-![ScreenshotEmpty]
-
 ![ScreenshotAmerica](https://github.com/yuval0hering/rock-your-world2/blob/master/ScreenshotAmerica.png)
 
-![ScreenshotEurope]
+![ScreenshotEurope](https://github.com/yuval0hering/rock-your-world2/blob/master/ScreenshotEurope.png)
 
 
