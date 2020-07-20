@@ -22,25 +22,27 @@ function add_markers(artist) {
     if (artist===""){
         url = 'http://localhost:5000/artist/billy+joel'
     }
-    Http.open("POST", url,false);
+    Http.open("POST", url);
     Http.send();
-    data= JSON.parse(Http.response);
-    for (var i = 0; i < data.length; i++) {
-        var place = data[i].name+"\n";
-        var songs="";
-        var songs_link="";
-        link="";
-        for(var j=0 ; j<data[i].songs.length; j++){
-            link=data[i].songs[j].url;
-            songs_link += `</b><a href=${link} target="_blank">${data[i].songs[j].song} - ${data[i].songs[j].artist}</a>\n`
+    Http.onreadystatechange = (e) => {
+        data= JSON.parse(Http.response);
+        for (var i = 0; i < data.length; i++) {
+            var place = data[i].name+"\n";
+            var songs="";
+            var songs_link="";
+            link="";
+            for(var j=0 ; j<data[i].songs.length; j++){
+                link=data[i].songs[j].url;
+                songs_link += `</b><a href=${link} target="_blank">${data[i].songs[j].song} - ${data[i].songs[j].artist}</a>\n`
+            }
+            var popup_content= "<b>"+place+" - </b>"+songs_link;
+            var icon = chooseIcon();
+            markers.push(L.marker([data[i].latitude,data[i].longitude],{icon: icon})
+                .addTo(mymap)
+                .bindPopup(popup_content).openPopup());
         }
-        var popup_content= "<b>"+place+" - </b>"+songs_link;
-        var icon = chooseIcon();
-        markers.push(L.marker([data[i].latitude,data[i].longitude],{icon: icon})
-            .addTo(mymap)
-            .bindPopup(popup_content).openPopup());
+        counter++;
     }
-    counter++;
 }
 
 document.documentMode = undefined;

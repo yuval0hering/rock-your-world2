@@ -2,10 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e2c89569-62c5-4561-b683-440ae0190414" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/../rock-your-world-api/backend/rock_your_world.py" beforeDir="false" afterPath="$PROJECT_DIR$/../rock-your-world-api/backend/rock_your_world.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/create_map.js" beforeDir="false" afterPath="$PROJECT_DIR$/create_map.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/map.html" beforeDir="false" afterPath="$PROJECT_DIR$/map.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -90,7 +88,8 @@
       <workItem from="1590246727480" duration="1638000" />
       <workItem from="1591348413497" duration="28908000" />
       <workItem from="1591864840201" duration="51000" />
-      <workItem from="1594976197236" duration="12049000" />
+      <workItem from="1594976197236" duration="12191000" />
+      <workItem from="1595141877263" duration="1030000" />
     </task>
     <servers />
   </component>
