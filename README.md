@@ -21,8 +21,7 @@ That's it! now you can check about which locations your favorite artists sing hi
 
 ![ScreenshotEmpty]
 
-![ScreenshotAmerica]
-(ScreenshotAmerica.png)
+![ScreenshotAmerica](https://github.com/yuval0hering/rock-your-world2/blob/master/ScreenshotAmerica.png)
 
 ![ScreenshotEurope]
 
