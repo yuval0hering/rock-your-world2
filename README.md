@@ -1,4 +1,4 @@
-# rock-your-world :earth_americas:
+# rock-your-world :earth_americas: :guitar:
 This project is part of Topics in Digital Humanities course in BGU.
 
 
